@@ -2,20 +2,13 @@
 using namespace std;
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
-    {
 
-        int a, b, c;
-        cin >> a >> b >> c;
-        while (a && b < 5)
-        {
-            a = a + 1;
-            b = b + 1;
-        }
-        cout << a * b * c << endl;
-        ;
+    array<int, 3> A;
+    cin >> A[0] >> A[1] >> A[2];
+    for (int i = 0; i < 5; i++)
+    {
+        (*min_element(A.begin(), A.end()))++;
+        cout << A[0] * A[1] * A[2] << endl;
     }
     return 0;
 }

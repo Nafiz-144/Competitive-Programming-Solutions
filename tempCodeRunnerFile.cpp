@@ -3,20 +3,25 @@ using namespace std;
 int main()
 {
     int t;
+    string a[100];
     cin >> t;
-    while (t--)
 
+    for (int i = 1; i <= t; i++)
     {
-
-        int a, b, c;
-        cin >> a >> b >> c;
-        do
+        cin >> a[i];
+        int l = a[i].size();
+        if (l % 2 == 0)
         {
-            a = a + 1;
-            b = b + 1;
-        } while (a && b < 5);
-        cout << a * b * c << endl;
-        ;
+            if (l / 2 + 1 == l / 2 + 2)
+            {
+                cout << "Yes" << endl;
+            }
+        }
+        else
+        {
+            cout << "No" << endl;
+        }
     }
+
     return 0;
 }

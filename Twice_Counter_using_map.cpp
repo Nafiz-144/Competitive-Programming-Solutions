@@ -3,7 +3,7 @@ class Solution
 public:
     int countWords(string list[], int n)
     {
-        unordered_map<string, int> mp;
+        map<string, int> mp;
         for (int i = 0; i < n; i++)
             mp[list[i]]++;
         int counter = 0;
@@ -12,6 +12,6 @@ public:
             if (x.second == 2)
                 counter++;
         }
-        return counter;
+        ` return counter;
     }
 };

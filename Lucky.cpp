@@ -7,11 +7,9 @@ int main()
     cin >> t;
     while (t--)
     {
-        int i, a[6];
-        for (i = 0; i < 6; i++)
-        {
-            cin >> a[i];
-        }
+        string a;
+        cin >> a;
+
         if (a[0] + a[1] + a[2] != a[3] + a[4] + a[5])
         {
             cout << "No" << endl;

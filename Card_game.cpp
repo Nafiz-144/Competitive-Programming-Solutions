@@ -19,7 +19,7 @@ int main()
         int a, b, c, d;
         cin >> a >> b >> c >> d;
 
-        int ans = 0; // Changed variable name from 'a' to 'ans' to avoid conflict
+        int ans = 0;
         if (f(a, c) + f(b, d) > 0)
         {
             ans += 1;

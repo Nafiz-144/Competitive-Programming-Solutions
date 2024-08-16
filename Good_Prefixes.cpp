@@ -1,43 +1,33 @@
+/*The only element that can be the sum of all other elements is the maximum element, since all elements are positive. Therefore, for each prefix i
+ from 1
+ to n
+, check if sum(a1,a2,...,ai)−max(a1,a2,...,ai)=max(a1,a2,...,ai)
+. The sum and max of prefixes can be tracked with variables outside the loop.*/
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main()
 {
     int t;
     cin >> t;
-
     while (t--)
     {
         int n;
         cin >> n;
-
-        vector<long long> a(n);
-        for (int i = 0; i < n; ++i)
-        {
+        int a[n];
+        for (int i = 0; i < n; i++)
             cin >> a[i];
-        }
-
-        int good_prefixes = 0;
-        long long prefix_sum = 0;
-
-        for (int i = 0; i < n; ++i)
+        long long sum = 0;
+        int mx = 0, ans = 0;
+        ;
+        for (int i = 0; i < n; i++)
         {
-            prefix_sum += a[i];
+            sum += a[i];
+            mx = max(mx, a[i]);
 
-            long long current_prefix_sum = prefix_sum;
-            for (int j = 0; j <= i; ++j)
-            {
-                if (a[j] == current_prefix_sum - a[j])
-                {
-                    good_prefixes++;
-                    break;
-                }
-            }
+            if (sum - mx == mx)
+                ans++;
         }
-
-        cout << good_prefixes << endl;
+        cout << ans << endl;
     }
-
-    return 0;
 }

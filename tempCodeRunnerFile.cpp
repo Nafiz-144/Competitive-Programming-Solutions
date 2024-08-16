@@ -1,25 +1,13 @@
-#include <bits/stdc++.h>
-using namespace std;
-int main()
-{
+  vector<string> s;
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        int i, a[6];
-        for (i = 0; i < 6; i++)
+        for (int i = 0; i < s.size(); ++i)
         {
-            cin >> a[i];
+            cin >> s[i];
         }
-        if (a[0] + a[1] + a[2] != a[3] + a[4] + a[5])
+        for (int i = 0; i < s.size(); ++i)
         {
-            cout << "No" << endl;
+            if (i % 2 == 0)
+            {
+                cout << i << endl;
+            }
         }
-        else
-        {
-            cout << "Yes" << endl;
-        }
-    }
-    return 0;
-}

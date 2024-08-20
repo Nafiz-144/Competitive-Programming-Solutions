@@ -1,26 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int t;
     cin >> t;
+    cin.ignore(); // Ignore the newline character after reading `t`
+
     while (t--)
     {
-        int a, b, c;
-        cin >> a >> b >> c;
-        if (a != c && b != c)
-        {
+        string expression;
+        getline(cin, expression); // Read the entire expression as a string
 
-            cout << c << endl;
-        }
-        else if (a != b && c != b)
+        stringstream ss(expression); // Use one stringstream object
+
+        int num1, num2;
+        char op;
+
+        ss >> num1 >> op >> num2; // Parse the numbers and the operator
+
+        if (op == '+')
         {
-            cout << b << endl;
-        }
-        else if (b != a && c != a)
-        {
-            cout << a << endl;
+            int r = num1 + num2;
+            cout << r << endl;
         }
     }
+
     return 0;
 }

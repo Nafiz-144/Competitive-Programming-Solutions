@@ -7,12 +7,23 @@ int main()
     while (t--)
     {
 
-        char a, b, c;
-        for (int i = 0; i < 3; ++i)
+        int ct[3] = {};
+        for (auto i = 0; i < 9; ++i)
         {
-
-            cin >> a >> b >> c;
+            char c;
+            cin >> c;
+            if (c != '?')
+            {
+                ct[c - 'A']++;
+            }
         }
+        for (auto i = 0; i < 3; i++)
+        {
+            if (ct[i] < 3)
+            {
+                cout << (char)('A' + i) << endl;
+            }
         }
+    }
     return 0;
 }

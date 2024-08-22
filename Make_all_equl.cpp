@@ -10,17 +10,16 @@ int main()
         int n;
         cin >> n;
         vector<int> a(n);
-        for (int i = 0; i < n; i++)
+        for (int &z : a)
         {
-            cin >> a[i];
+            cin >> z;
         }
         vector<int> fre(n + 1);
-        for (int i = 0; i < n; i++)
+        for (int z : a)
         {
-            if (a[i] == a[i + 1])
-            {
-                fre[i]++;
-            }
+            fre[z]++;
+        }
+        {
         }
         cout << n - (*max_element(fre.begin(), fre.end())) << endl;
     }

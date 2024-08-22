@@ -14,9 +14,10 @@ int main()
             a[i] = i + 1;
         }
         for (auto i = 0; i < n; ++i)
-        {
-            cout << a[i] << " ";
-        }
+            n
+            {
+                cout << a[i] << " ";
+            }
     }
     return 0;
 }

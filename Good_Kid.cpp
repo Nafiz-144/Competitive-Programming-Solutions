@@ -15,15 +15,15 @@ int main()
             cin >> a[i];
         }
 
-        // Initialize sum vector with zeros
-        vector<int> sum(n, 0);
-        for (int i = 0; i < n; ++i)
-        {
-            sum[i] = (i + 1) * a[i]; // Corrected index and multiplication
-        }
+        sort(a.begin(), a.end());
+        a[0]++;
 
-        int max1 = *max_element(sum.begin(), sum.end());
-        cout << max1 * 2 << endl;
+        int an = 1; // Initialize `an` inside the loop
+        for (int i = 0; i < n; ++i)
+            an *= a[i];
+
+        cout << an << endl; // Output the result for the current test case
     }
+
     return 0;
 }

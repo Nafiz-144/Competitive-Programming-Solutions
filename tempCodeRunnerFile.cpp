@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int t;
@@ -12,18 +11,28 @@ int main()
         vector<int> a(n);
         for (int i = 0; i < n; ++i)
         {
+
             cin >> a[i];
         }
-
-        // Initialize sum vector with zeros
-        vector<int> sum(n, 0);
-        for (int i = 0; i < n; ++i)
+        int ans = 0, sum = 0;
+        for (int i = 0; i < n; i++)
         {
-            sum[i] = (i + 1) * a[i]; // Corrected index and multiplication
+            if (
+                n == 1)
+            {
+                cout << n;
+                break;
+            }
+            else if (i == n)
+            {
+                ans = a[n] - 0;
+            }
+            else
+            {
+                sum += a[i] - a[i + 1];
+            }
         }
-
-        int max1 = *max_element(sum.begin(), sum.end());
-        cout << max1 * 2 << endl;
+        cout << ans + sum << endl;
     }
     return 0;
 }

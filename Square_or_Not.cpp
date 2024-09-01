@@ -1,34 +1,45 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        int n, i, j;
+        int n;
         cin >> n;
-        int s[n][n];
-        for (i = 0; i < n; i++)
+        string s;
+        cin >> s;
+
+        long long int m = 1;
+        while (m * m < n)
         {
-            for (j = 0; j < n; j++)
-            {
-                cin >> s[i][j];
-            }
+            m++;
         }
 
-        for (i = 0; i < n; i = i + 2)
+        if (m * m != n)
         {
-            for (j = 0; j < n; j = j + 2)
-                if (s[i][j] % 2 == 0)
-                {
-                    cout << "Yes" << endl;
-                }
-                else
-                {
-                    cout << "No" << endl;
-                }
+            cout << "No" << endl;
+            continue;
         }
+
+        vector<string> mat(m, string(m, '0'));
+        for (int i = 0; i < m; i++)
+        {
+            mat[0][i] = '1';
+            mat[m - 1][i] = '1';
+            mat[i][0] = '1';
+            mat[i][m - 1] = '1';
+        }
+
+        string t = "";
+        for (const auto &z : mat)
+        {
+            t += z;
+        }
+
+        cout << (s == t ? "Yes" : "No") << endl;
     }
 
     return 0;

@@ -6,16 +6,37 @@ int main()
     cin >> t;
     while (t--)
     {
-        long long int l, r;
-        cin >> l >> r;
-        const long long int df = r - l;
-        long long int i = 0, ans = 0;
-        while (i * (i - 1) / 2 <= df)
+
+        string k = "Timur";
+        sort(k.begin(), k.end());
+        int n, i = 0;
+        cin >> n;
+        vector<string> s(n);
+        for (int i = 0; i < n; i++)
         {
-            ans = i;
-            i++;
+            cin >> s[i];
         }
-        cout << ans << endl;
+        sort(s[i].begin(), s[i].end());
+
+        bool found = false;
+        for (int i = 0; i < n; ++i)
+        {
+            if (s[i] == k)
+            {
+                found = true;
+                break;
+            }
+        }
+
+        if (found)
+        {
+            cout << "Yes" << endl;
+        }
+        else
+        {
+            cout << "No" << endl;
+        }
     }
+
     return 0;
 }

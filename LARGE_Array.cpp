@@ -1,20 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cmath>
 using namespace std;
+
 int main()
 {
     int t;
     cin >> t;
+
     while (t--)
     {
         int n, k;
         cin >> n >> k;
-        int sum = (n + k) - 1;
-        int a[n], s = 0;
-        for (int i = k; i < sum; i++)
-        {
-            s = a[i] + a[i + 1] - a[sum - 2] - a[sum - 1];
-        }
-        cout << abs(s) << endl;
+
+        // The minimum difference |i - (n-1)| can only be 0 or 1
+        cout << min(abs(0 - (n - 1)), abs((n - 1) - (n - 1))) << endl;
     }
+
     return 0;
 }

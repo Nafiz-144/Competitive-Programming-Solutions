@@ -1,24 +1,6 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
-
-void solve()
-{
-    int n;
-    cin >> n;
-    char a[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    for (int i = 0; i < n; i++)
-    {
-        if (a[i] == '#')
-        {
-            cout << i << endl;
-            break;
-        }
-    }
-}
 
 int main()
 {
@@ -26,7 +8,9 @@ int main()
     cin >> t;
     while (t--)
     {
-        solve();
+        int x, y, k;
+        cin >> x >> y >> k;
+        cout << max(2 * ((x + k - 1) / k) - 1, 2 * ((y + k - 1) / k)) << endl;
     }
     return 0;
 }

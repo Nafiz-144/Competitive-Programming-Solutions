@@ -6,37 +6,18 @@ int main()
     cin >> t;
     while (t--)
     {
-        string s;
-        cin >> s;
-        int id = -1;
-        for (int i = 0; i < s.size(); i++)
-        {
-            if (s[i] == s[i + 1])
-            {
-                id = i;
-            }
-        }
 
-        if (id == -1)
+        int n, i = 0;
+        cin >> n;
+        vector<int> a(n);
+
+        for (int i = 0; i < n; ++i)
         {
-            if (s.back() == 'a')
-            {
-                cout << (s + "b") << endl;
-            }
-            else
-            {
-                cout << "a" << endl;
-            }
+            cin >> a[i];
         }
-        else
-        {
-            string t = "a";
-            if (s[id] == 'a')
-            {
-                t = "b";
-                cout << s.substr(0, id + 1) + t + s.substr(id + 1) << endl;
-            }
-        }
+        cout << a[i];
+        if (a[i] = !a[i + 1])
+            cout << i << endl;
     }
 
     return 0;

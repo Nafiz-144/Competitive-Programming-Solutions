@@ -1,24 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-
-        int n, i = 0;
+        int n;
         cin >> n;
-        vector<int> a(n);
+        vector<string> a = {"a", "e", "i", "o", "u"};
 
+        // Print the first 'n' vowels, looping over them if needed
         for (int i = 0; i < n; ++i)
         {
-            cin >> a[i];
+            cout << a[i % 5] << " "; // Using modulus to loop over vowels
         }
-        cout << a[i];
-        if (a[i] = !a[i + 1])
-            cout << i << endl;
-    }
 
+        cout << endl; // Ensure a newline after each test case
+    }
     return 0;
 }

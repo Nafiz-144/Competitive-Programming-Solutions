@@ -2,17 +2,35 @@
 using namespace std;
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    int q;
+    cin >> q;
+    while (q--)
     {
-        vector<int> a(2);
-        for (int i = 0; i < a.size(); ++i)
+        int type;
+
+        cin >> type;
+
+        map<string, int> m;
+
+        if (type == 1)
         {
-            cin >> a[i];
+            string x;
+            int y;
+            cin >> x >> y;
+            m[x] += y;
         }
-        sort(a.begin(), a.end());
-        cout << a[0] << " " << a[1] << endl;
+        else if (type == 2)
+        {
+            string x;
+            cin >> x;
+            m.erase(x);
+        }
+        else if (type == 3)
+        {
+            string x;
+            cin >> x;
+            cout << m[x] << endl;
+        }
     }
 
     return 0;

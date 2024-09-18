@@ -14,13 +14,11 @@ int main()
         return 0;
     }
 
-    // Calculate the maximum power of k within the range
     int max_power = floor(log(r) / log(k));
 
-    // Print all numbers of the form kx within the range
     for (int power = 0; power <= max_power; ++power)
     {
-        long long num = pow(k, power); // Use long long to avoid overflow
+        long long num = pow(k, power);
         if (num >= l && num <= r)
         {
             cout << num << endl;

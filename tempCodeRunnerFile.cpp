@@ -1,31 +1,26 @@
-#include <iostream>
-#include <cmath>
-
+#include <bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    int l, r, k;
-    cin >> l >> r >> k;
-
-    if (r < k)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cout << -1 << endl;
-        return 0;
-    }
-
-    // Calculate the maximum power of k within the range
-    int max_power = floor(log(r) / log(k));
-
-    // Print all numbers of the form kx within the range
-    for (int power = 0; power <= max_power; ++power)
-    {
-        long long num = pow(k, power); // Use long long to avoid overflow
-        if (num >= l && num <= r)
+        int n, i = 0;
+        cin >> n;
+        vector<string> s(n);
+        for (i = 0; i < n; i++)
         {
-            cout << num << endl;
+            cin >> s[i];
+        }
+        if (i != i + 1)
+        {
+            cout << "Yes" << endl;
+        }
+        else if (i == i + 1 || i + 2 == i)
+        {
+            cout << "No" << endl;
         }
     }
-
     return 0;
 }

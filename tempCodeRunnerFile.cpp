@@ -6,24 +6,19 @@ int main()
     cin >> t;
     while (t--)
     {
-        int n, k;
-        cin >> n >> k;
-        int r = 0, g = 0;
-        for (int i = 0; i < n; i++)
+        int n, f, k;
+        cin >> n >> f >> k;
+        vector<int> a(n);
+        for (auto i = 0; i < n; i++)
         {
-            int c;
-            cin >> c;
-            if (c == 0 && g > 0)
-            {
-                r++;
-                g--;
-            }
-            else if (c >= k)
-            {
-                g += c;
-            }
+            cin >> a[i];
         }
-        cout << r << endl;
+        sort(a.begin(), a.end(), greater<int>());
+        for (auto i = 0; i < n; i++)
+        {
+            cout << a[i];
+        }
     }
+
     return 0;
 }

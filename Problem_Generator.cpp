@@ -2,24 +2,33 @@
 #include <string>
 #include <algorithm>
 using namespace std;
+
 void solve()
 {
     int n, m;
     cin >> n >> m;
     string a;
     cin >> a;
-    int ans = 0;
-    for (char ch = 'A'; ch < 'H'; ++ch)
+
+    int missingProblems = 0;
+
+    for (char ch = 'A'; ch <= 'G'; ++ch)
     {
-        ans += max(0, m - count(a.begin(), a.end(), ch));
+        int countCh = count(a.begin(), a.end(), ch);
+        if (countCh < m)
+        {
+            missingProblems += (m - countCh);
+        }
     }
-    cout << ans << endl;
+
+    cout << missingProblems << endl;
 }
+
 int main()
 {
     int t;
     cin >> t;
-    for (int i = 0; i < t; ++i)
+    while (t--)
     {
         solve();
     }

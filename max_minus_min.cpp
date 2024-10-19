@@ -12,12 +12,19 @@ void solve()
 
     int result = *max_element(a.begin(), a.end()) - *min_element(a.begin(), a.end());
 
-    for (int i = 0; i < n; i++)
+    int l = 2, r = n - 1;
+    int x = (l + r) / 2;
+    if (result == 0 || result - 1)
     {
-        if (result == 0 || result - 1)
+        cout << result << endl;
+    }
+    else
+    {
+        for (int i = l; i < r; i++)
         {
-            cout << result << endl;
+            a[i] += x;
         }
+        cout << *max_element(a.begin(), a.end()) - *min_element(a.begin(), a.end());
     }
 }
 int main()

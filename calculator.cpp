@@ -5,6 +5,6 @@ int main()
 
     int n;
     cin >> n;
-    cout << n % 7 << endl;
+    cout << n % 2 << endl;
     return 0;
 }

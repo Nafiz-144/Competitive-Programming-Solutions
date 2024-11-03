@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 void solve()
 {
     int n;
@@ -9,30 +10,31 @@ void solve()
     {
         cin >> vec[i];
     }
-    bool q;
-    for (int i = 0; i < n; i++)
+    int c = 0;
+    for (int i = 0; i < n - 1; i++)
     {
-        if (abs(vec[i] - vec[i + 1]) != 5 || abs(vec[i] - vec[i + 1]) != 7)
+        int diff = abs(vec[i] - vec[i + 1]);
+        if (diff != 5 && diff != 7)
         {
-            q = true;
+            c++;
         }
     }
-    if (q == true)
+    if (c > 0)
     {
-        cout << "No\n";
+        cout << "No" << endl;
     }
     else
     {
-        cout << "Yes\n";
+        cout << "Yes" << endl;
     }
 }
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-
         solve();
     }
     return 0;

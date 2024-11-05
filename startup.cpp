@@ -13,7 +13,7 @@ void solve()
         cin >> b >> c;
         v[b - 1] += c;
     }
-    sort(v.begin(), v.end());
+    sort(v.rbegin(), v.rend());
     int ans = 0;
     for (int i = 0; i < min(n, k); i++)
     {

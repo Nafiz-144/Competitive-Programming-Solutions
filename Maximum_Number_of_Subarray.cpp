@@ -9,9 +9,11 @@ int main()
     {
         cin >> a[i];
     }
+    // 1 2 3 4
+    vector<int> sum(n);
     for (int i = 0; i < n; i++)
     {
-        int sum[i] = a[i] + a[i + 1];
+        sum[i] = a[i] + a[i + 1];
     }
 
     return 0;

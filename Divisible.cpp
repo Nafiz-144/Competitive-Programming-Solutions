@@ -8,14 +8,7 @@ int main()
     {
         int n, k;
         cin >> n >> k;
-        int gcd = 0;
-        for (int i = 0; i < n || i < k; i++)
-        {
-            if (n % i == 0 && k & i)
-            {
-                gcd = i;
-            }
-        }
+        int gcd = __gcd(n, k);
         cout << (k / gcd) << endl;
     }
     return 0;
